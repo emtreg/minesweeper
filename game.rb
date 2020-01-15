@@ -2,7 +2,7 @@ require 'colorize'
 
 class Game
 
-	def display
+	def display_instructions
 
 		puts "                           MINESWEEPER".blue
 		puts "\n"

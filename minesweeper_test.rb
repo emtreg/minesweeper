@@ -1,7 +1,7 @@
 begin
   gem 'minitest', '>= 5.0.0'
   require 'minitest/autorun'
-  require_relative 'instructions'
+  require_relative 'game'
   require_relative 'game_board'
   require_relative 'tile'
 rescue Gem::LoadError => e
@@ -18,7 +18,7 @@ class MinesweeperTest < Minitest::Test
 
   def test_display_instructions
     # skip
-    assert_equal true, Instructions.display_instructions
+    assert_equal true, Game.display_instructions
   end
 
 end
