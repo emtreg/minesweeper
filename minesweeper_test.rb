@@ -21,12 +21,12 @@ class MinesweeperTest < Minitest::Test
     assert_equal true, Instructions.display_instructions
   end
 
-  def test_set_tile
+  def test_set_symbols
     result = Array.new(2)
     result[0] = '?'
     result [1] = ''
     tile = Tile.new('?', '')
-    assert_equal result, tile.set_tile
+    assert_equal result, tile.set_symbols
   end
 
 end
