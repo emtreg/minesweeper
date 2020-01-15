@@ -18,7 +18,7 @@ class MinesweeperTest < Minitest::Test
 
   def test_display_instructions
     # skip
-    assert_equal true, Instructions.display_instructions
+    assert_equal true, Instructions.display
   end
 
   def test_set_symbols
@@ -27,6 +27,11 @@ class MinesweeperTest < Minitest::Test
     result [1] = ''
     tile = Tile.new('?', '')
     assert_equal result, tile.set_symbols
+  end
+
+  def test_populate_board
+    board = GameBoard.new(2,2)
+    assert_equal true, board.populate
   end
 
 end
