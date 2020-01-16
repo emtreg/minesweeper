@@ -2,7 +2,7 @@ begin
   gem 'minitest', '>= 5.0.0'
   require 'minitest/autorun'
   require_relative 'game'
-  require_relative 'game_board'
+  require_relative 'board'
   require_relative 'tile'
 rescue Gem::LoadError => e
   puts "\nMissing Dependency:\n#{e.backtrace.first} #{e.message}"
@@ -23,12 +23,12 @@ class MinesweeperTest < Minitest::Test
   end
 
   def test_populate
-    board = GameBoard.new(2,2)
+    board = Board.new(2,2)
     assert_equal true, board.populate
   end
 
   def test_display_board
-    board = GameBoard.new(10,10)
+    board = Board.new(10,10)
     board.populate
     assert_equal true, board.display
   end
