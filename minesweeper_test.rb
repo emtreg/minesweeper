@@ -18,20 +18,19 @@ class MinesweeperTest < Minitest::Test
 
   def test_display_instructions
     # skip
-    assert_equal true, Game.display_instructions
+    game = Game.new
+    assert_equal true, game.display_instructions
   end
 
-  def test_set_symbols
-    result = Array.new(2)
-    result[0] = '?'
-    result [1] = ''
-    tile = Tile.new('?', '')
-    assert_equal result, tile.set_symbols
-  end
-
-  def test_populate_board
+  def test_populate
     board = GameBoard.new(2,2)
     assert_equal true, board.populate
+  end
+
+  def test_display_board
+    board = GameBoard.new(10,10)
+    board.populate
+    assert_equal true, board.display
   end
 
 end
