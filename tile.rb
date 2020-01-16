@@ -5,5 +5,6 @@ class Tile
 	def initialize(outer_symbol, hidden_symbol)
 		@outer_symbol	= outer_symbol
 		@hidden_symbol	= hidden_symbol
-		end
+		@coordinates
+	end
 end

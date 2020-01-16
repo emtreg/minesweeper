@@ -33,4 +33,10 @@ class MinesweeperTest < Minitest::Test
     assert_equal true, board.display
   end
 
+  def test_set_coordinates
+    board = Board.new(10,10)
+    board.populate
+    assert_equal true, board.set_coordinates
+  end
+
 end

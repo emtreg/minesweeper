@@ -6,14 +6,25 @@ class Board
 attr_accessor :height, :width, :board, :num_tiles
 
 	def initialize(height, width)
-		@height	= height
-		@width	= width
-		@num_tiles = height * width
+		@height		= height
+		@width		= width
+		@num_tiles 	= height * width
 	end
 
 	def populate
 		self.board  = Array.new(num_tiles) { |item| item = Tile.new("?","")}
 		return true	
+	end
+
+	def set_coordinates
+
+		tile_coordinates = 0
+
+		for index in 0 ... board.size
+			board[index].coordinates = tile_coordinates
+			tile_coordinates+=1
+		end
+		return true
 	end
 
 	def display
@@ -56,15 +67,18 @@ end
 
 game = Game.new
 game.display_instructions
-board = GameBoard.new(10,10)
+board = Board.new(10,10)
 board.populate
 #board.display
+board.set_coordinates
+
+=begin
 board.board[5].outer_symbol = "4"
 board.board[6].outer_symbol = "*"
 board.board[7].outer_symbol = "F"
 board.board[8].outer_symbol = "/"
 board.board[10].outer_symbol = "/"
-
+=end
 board.display
 
 
